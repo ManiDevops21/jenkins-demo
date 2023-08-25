@@ -18,7 +18,7 @@ pipeline {
         stage('Archieve Artifacts'){
             steps {
                 echo "archiving the artifacts"
-                archiveArtifacts 'cd /var/lib/jenkins/workspace/Continuous-Integration/MavenProject/multi3/target/*.war'
+                archiveArtifacts 'MavenProject/multi3/target/*.war'
             }
             
         }
