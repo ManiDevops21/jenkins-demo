@@ -11,14 +11,14 @@ pipeline {
         stage('build'){
             steps {
                 echo "building the project"
-                sh "cd MavenProject ; mvn clean install ; pwd"
+                sh "cd /var/lib/jenkins/workspace/Continuous-Integration/MavenProject ; mvn clean install ; pwd"
             }
         }
         
         stage('Archieve Artifacts'){
             steps {
                 echo "archiving the artifacts"
-                archiveArtifacts 'MavenProject/multi3/target/*.war'
+                archiveArtifacts 'cd /var/lib/jenkins/workspace/Continuous-Integration/MavenProject/multi3/target/*.war'
             }
             
         }
@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     echo "deployment"
-                    sh 'cp MavenProject/multi3/target/*.war /Applications/apache-tomcat-7.0.88/webapps/'
+                    sh 'cp /var/lib/jenkins/workspace/Continuous-Integration/MavenProject/multi3/target/*.war /Applications/apache-tomcat-7.0.88/webapps/'
                 }
             }
         }
