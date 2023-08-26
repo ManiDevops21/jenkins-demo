@@ -27,7 +27,7 @@ pipeline {
             steps {
                 script {
                     echo "deployment"
-                    sh 'cp Continuous-Integration/MavenProject/multi3/target/*.war Continuous-Integration/Applications/apache-tomcat-7.0.88/webapps/'
+                    sh "cp /MavenProject/multi3/target/*.war /Applications/apache-tomcat-7.0.88/webapps/"
                 }
             }
         }
