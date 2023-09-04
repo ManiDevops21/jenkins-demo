@@ -27,9 +27,8 @@ pipeline {
             steps {
                 script {
                     echo "deployment"
-                    sh 'cp /var/lib/jenkins/workspace/Continuous-Integration//MavenProject/multi3/target/*.war /opt/tomcat/apache-tomcat-7.0.88/webapps'
-                }
-            }
+                    sh 'cp /var/lib/jenkins/workspace/Continuous-Integration/MavenProject/multi3/target/*.war /opt/tomcat/apache-tomcat-7.0.88/webapps/'
+                }            }
         }
         stage('publish html report') {
             steps{
