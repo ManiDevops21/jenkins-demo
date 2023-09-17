@@ -11,7 +11,7 @@ pipeline {
         stage('build'){
             steps {
                 echo "building the project"
-                sh "cd /var/lib/jenkins/workspace/Continuous-Integration/MavenProject ; mvn clean install ; pwd"
+                sh "cd MavenProject ; mvn clean install ; pwd"
             }
         }
         
@@ -26,8 +26,7 @@ pipeline {
             // Deployment
             steps {
                 script {
-                    echo "deployment"
-                    sh "whoami"
+                    echo "deployment"                    
                     sh 'cp MavenProject/multi3/target/*.war /opt/tomcat/apache-tomcat-7.0.88/webapps/'
                 }            }
         }
