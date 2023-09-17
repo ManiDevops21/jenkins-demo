@@ -11,6 +11,7 @@ pipeline {
         stage('build'){
             steps {
                 echo "building the project"
+                sh "whoami"
                 sh "cd /var/lib/jenkins/workspace/Continuous-Integration/MavenProject ; mvn clean install ; pwd"
             }
         }
