@@ -27,6 +27,7 @@ pipeline {
             steps {
                 script {
                     echo "deployment"
+                    sh "whoami"
                     sh 'cp MavenProject/multi3/target/*.war /opt/tomcat/apache-tomcat-7.0.88/webapps/'
                 }            }
         }
