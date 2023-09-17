@@ -48,7 +48,7 @@ pipeline {
             parallel ( "JavaNcss Report":   
             {              
                 git 'https://github.com/ManiDevops21/jenkins-demo.git'
-                sh "eco test1 ; cd javancss-master ; ls -lrth ; mvn test javancss:report ; pwd"                  
+                sh "echo test1 ; cd javancss-master ; ls -lrth ; mvn test javancss:report ; pwd"                  
             },
             "FindBugs Report" : {           
                 sh "mkdir javancss1 ; cd javancss1 ;pwd"
