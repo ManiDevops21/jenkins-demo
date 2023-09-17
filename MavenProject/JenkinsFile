@@ -11,8 +11,11 @@ pipeline {
         stage('build'){
             steps {
                 echo "building the project"
-                sh "whoami"
-                sh "cd /var/lib/jenkins/workspace/Continuous-Integration/MavenProject ; mvn clean install ; pwd"
+                sh """
+                export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre/"
+                export PATH=$JAVA_HOME/bin:$PATH     
+                cd MavenProject ; mvn clean install ; pwd
+                """        
             }
         }
         
