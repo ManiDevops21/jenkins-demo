@@ -11,8 +11,7 @@ pipeline {
         stage('build'){
             steps {
                 echo "building the project"                
-                sh "cd MavenProject ; mvn clean install ; pwd"
-                          
+                sh "cd MavenProject ; mvn clean install ; pwd"                          
             }
         }
         
