@@ -10,12 +10,9 @@ pipeline {
         }
         stage('build'){
             steps {
-                echo "building the project"
-                sh """
-                export JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/jre/"
-                export PATH=$JAVA_HOME/bin:$PATH     
-                cd MavenProject ; mvn clean install ; pwd
-                """            
+                echo "building the project"                
+                sh "cd MavenProject ; mvn clean install ; pwd"
+                          
             }
         }
         
