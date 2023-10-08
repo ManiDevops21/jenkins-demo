@@ -47,14 +47,14 @@ pipeline {
             parallel ( "JavaNcss Report":   
             {
               node('window'){
-                git 'https://github.com/vathsalahn/jenkins-demo.git'
+                git 'https://github.com/ManiDevops21/jenkins-demo.git'
                 sh "cd javancss-master ; mvn test javancss:report ; pwd"
                   }
             },
             "FindBugs Report" : {
             node('window'){
                 sh "mkdir javancss1 ; cd javancss1 ;pwd"
-                git 'https://github.com/vathsalahn/jenkins-demo.git'
+                git 'https://github.com/ManiDevops21/jenkins-demo.git'
                 sh "cd javancss-master ; mvn findbugs:findbugs ; pwd"
                 deleteDir()
                 }
