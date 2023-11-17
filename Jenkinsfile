@@ -28,7 +28,8 @@ pipeline {
                 script {
                     echo "deployment"                    
                     sh 'cp MavenProject/multi3/target/*.war /opt/tomcat/apache-tomcat-7.0.88/webapps/'
-                }            }
+                }          
+            }
         }
         stage('publish html report') {
             steps{
