@@ -55,7 +55,7 @@ pipeline {
             },
             "FindBugs Report" : {
             node('window'){
-                sh "mkdir javancss1 ; cd javancss1 ;pwd"
+                sh "cd javancss1 ;pwd"
                 git 'https://github.com/ManiDevops21/jenkins-demo.git'
                 sh "cd javancss-master ; mvn findbugs:findbugs ; pwd"
                 deleteDir()
